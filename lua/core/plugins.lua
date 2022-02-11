@@ -52,7 +52,7 @@ return require('packer').startup(function()
     }
 
     -- tagbar
-    use 'preservim/tagbar'
+    use 'simrat39/symbols-outline.nvim'
 
     -- floating terminal
     use 'voldikss/vim-floaterm'

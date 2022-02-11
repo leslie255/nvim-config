@@ -30,4 +30,5 @@ require("bufferline").setup {}
 
 require("configs.filetree")
 require("configs.treesitter")
+require("configs.outlinetree")
 

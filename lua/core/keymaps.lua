@@ -62,7 +62,7 @@ mapcmd('<leader>lr', 'lua vim.lsp.buf.rename()')
 mapcmd('<leader>lh', 'lua vim.lsp.buf.signature_help()')
 mapcmd('<leader>la', 'lua vim.lsp.buf.code_action()')
 mapcmd('<leader>lf', 'lua vim.lsp.buf.formatting()')
-mapcmd('<leader>lb', 'TagbarToggle')
+mapcmd('<leader>lb', ':SymbolsOutline')
 
 mapcmd('<leader>gD', 'lua vim.lsp.buf.declaration()')
 mapcmd('<leader>gd', 'lua vim.lsp.buf.definition()')
