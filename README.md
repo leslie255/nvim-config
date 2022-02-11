@@ -9,3 +9,9 @@ This is a bad practice, I used to have a large vim config full of those things a
 so it's better to get things sorted from the start
 - I'm still using some oldschool plugins while there are better modern alternatives
 (This was my first attempt at a modern NeoVim setup, so for some plugins I just used the ones that I used before)
+
+TODOs:
+- Better git integration
+- Clean up Lua code
+- Optimize startup time
+

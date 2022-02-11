@@ -22,6 +22,9 @@ if vim.fn.has('termguicolors') then
     vim.opt.termguicolors = true
 end
 
+-- impatient config
+require("impatient")
+
 require("configs.autocomplete")
 require("configs.statusline")
 
