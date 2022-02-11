@@ -34,13 +34,13 @@ return require('packer').startup(function()
 
     -- language
     use 'neovim/nvim-lspconfig'
-    use 'bfrg/vim-cpp-modern'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
+    use 'nvim-treesitter/nvim-treesitter'
 
     -- git
     use 'airblade/vim-gitgutter'

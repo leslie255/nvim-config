@@ -29,4 +29,5 @@ require("configs.statusline")
 require("bufferline").setup {}
 
 require("configs.filetree")
+require("configs.treesitter")
 
