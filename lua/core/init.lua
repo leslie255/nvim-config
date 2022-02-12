@@ -41,7 +41,9 @@ vim.g.loaded_remote_plugins    = 1
 -- impatient setup
 require("impatient")
 -- bufferline setup
-require("bufferline").setup {}
+require("bufferline").setup()
+-- startup setup
+--require("startup").setup()
 
 require("configs.autocomplete").config()
 require("configs.statusline").config()

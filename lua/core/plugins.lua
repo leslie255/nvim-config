@@ -13,7 +13,7 @@ return require('packer').startup(function()
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
     }
-    use 'moll/vim-bbye'
+    use 'moll/vim-bbye' -- for more sensible delete buffer cmd
 
     -- themes
     use 'sainnhe/sonokai'
@@ -22,9 +22,6 @@ return require('packer').startup(function()
 --    use { 'sonph/onehalf', rtp='vim/' }
 --    use 'liuchengxu/space-vim-dark'
 --    use 'ahmedabdulrahman/aylin.vim'
-
-    -- start screen
-    use 'matteogiorgi/vim-startscreen'
 
     -- file tree
     use {
@@ -43,7 +40,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
 
     -- git
-    use 'airblade/vim-gitgutter'
+    use 'airblade/vim-gitgutter' -- TODO: better git integration
 
     -- status line
     use {
@@ -62,6 +59,12 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
     }
+
+    -- startup screen (TODO)
+--    use {
+--        "startup-nvim/startup.nvim",
+--        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+--    }
 
 end)
 
