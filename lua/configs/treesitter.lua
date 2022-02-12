@@ -1,3 +1,5 @@
+local M = {}
+function M.config()
 -- nvim-treesitter config
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -24,4 +26,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
+end
+return M

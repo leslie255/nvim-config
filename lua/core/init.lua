@@ -38,16 +38,14 @@ vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
 
--- impatient config
+-- impatient setup
 require("impatient")
-
-require("configs.autocomplete")
-require("configs.statusline")
-
--- bufferline config
+-- bufferline setup
 require("bufferline").setup {}
 
-require("configs.filetree")
-require("configs.treesitter")
-require("configs.outlinetree")
+require("configs.autocomplete").config()
+require("configs.statusline").config()
+require("configs.filetree").config()
+require("configs.treesitter").config()
+require("configs.outlinetree").config()
 

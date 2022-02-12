@@ -11,7 +11,8 @@ so it's better to get things sorted from the start
 (This was my first attempt at a modern NeoVim setup, so for some plugins I just used the ones that I used before)
 
 TODOs:
+- Fancy startup screen
 - Better git integration
-- Clean up Lua code
+- Clean up Lua config code
 - Optimize startup time
 
