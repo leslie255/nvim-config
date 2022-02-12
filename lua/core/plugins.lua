@@ -16,12 +16,12 @@ return require('packer').startup(function()
     use 'moll/vim-bbye'
 
     -- themes
-    use 'joshdick/onedark.vim'
-    use { 'catppuccin/nvim', as='catppuccin' }
-    use { 'sonph/onehalf', rtp='vim/' }
     use 'sainnhe/sonokai'
-    use 'liuchengxu/space-vim-dark'
-    use 'ahmedabdulrahman/aylin.vim'
+--    use 'joshdick/onedark.vim'
+--    use { 'catppuccin/nvim', as='catppuccin' }
+--    use { 'sonph/onehalf', rtp='vim/' }
+--    use 'liuchengxu/space-vim-dark'
+--    use 'ahmedabdulrahman/aylin.vim'
 
     -- start screen
     use 'matteogiorgi/vim-startscreen'
