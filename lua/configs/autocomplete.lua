@@ -48,7 +48,7 @@ function M.config()
     })
 
     -- nvim-lspconfig config
-    local servers = { 'ccls' }
+    local servers = { 'clangd', 'ccls' }
     for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,

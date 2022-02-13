@@ -44,11 +44,11 @@ function M.config()
             Boolean = {icon = "⊨", hl = "TSBoolean"},
             Array = {icon = "", hl = "TSConstant"},
             Object = {icon = "⦿", hl = "TSType"},
-            Key = {icon = "🔐", hl = "TSType"},
+            Key = {icon = "", hl = "TSType"},
             Null = {icon = "NULL", hl = "TSType"},
             EnumMember = {icon = "", hl = "TSField"},
             Struct = {icon = "𝓢", hl = "TSType"},
-            Event = {icon = "🗲", hl = "TSType"},
+            Event = {icon = "גּ", hl = "TSType"},
             Operator = {icon = "+", hl = "TSOperator"},
             TypeParameter = {icon = "𝙏", hl = "TSParameter"}
         }

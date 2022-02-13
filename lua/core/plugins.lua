@@ -15,7 +15,7 @@ return require('packer').startup(function()
     }
     use 'moll/vim-bbye' -- for more sensible delete buffer cmd
 
-    -- themes
+    -- themes (disabled other themes to optimize startup time)
     use 'sainnhe/sonokai'
 --    use 'joshdick/onedark.vim'
 --    use { 'catppuccin/nvim', as='catppuccin' }
@@ -60,11 +60,8 @@ return require('packer').startup(function()
         requires = 'nvim-lua/plenary.nvim'
     }
 
-    -- startup screen (TODO)
---    use {
---        "startup-nvim/startup.nvim",
---        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
---    }
+    -- startup screen
+    use 'goolord/alpha-nvim'
 
 end)
 
