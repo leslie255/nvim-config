@@ -1,20 +1,6 @@
-# nvim-config
-My personal modern NeoVim config
+# My personal modern NeoVim config
 
 Some outdated demo screenshots can be seen here: https://www.reddit.com/gallery/spt2tm (It has since become much better!)
-
-Note that some parts of the config is pretty hacky and needs a bit of polishing, namely:
-
-- For some of the plugins I simply copy and pasted the default config :D.
-This is a bad practice, I used to have a large vim config full of those things and the result is a shit ton of unexpected behavier,
-so it's better to get things sorted from the start
-- I'm still using some oldschool plugins while there are better modern alternatives
-(This was my first attempt at a modern NeoVim setup, so for some plugins I just used the ones that I used before)
-
-TODOs:
-- Better git integration
-- Clean up Lua config code
-- Optimize startup time
 
 ## Install
 1. This setup uses packer.nvim for the package manager, so first install packer.nvim by following the [official instructions](https://github.com/wbthomason/packer.nvim#quickstart)
@@ -38,3 +24,8 @@ Discussions could be in either English or Chinese, although English is preferred
 
 **Adding more things**<br>
 For now, you don't, this is *my personal config*, although do leave suggestions if you have any
+
+## TODOs
+- Better git integration
+- Clean up Lua config code
+- Optimize startup time
