@@ -1,6 +1,12 @@
 # My personal modern NeoVim config
 
-Some outdated demo screenshots can be seen here: https://www.reddit.com/gallery/spt2tm (It has since become much better!)
+<p align="center">
+<img src="https://i.imgur.com/x3X4LWu.png" alt="Startup screen" width="70%"/><br>
+<img src="https://i.imgur.com/Uy7542a.png" alt="Startup screen" width="49%"/>
+<img src="https://i.imgur.com/VmKLt06.png" alt="Startup screen" width="49%"/><br>
+<img src="https://i.imgur.com/bOxca0J.png" alt="Startup screen" width="49%"/>
+<img src="https://i.imgur.com/JIZE92B.png" alt="Startup screen" width="49%"/><br>
+</p>
 
 ## Install
 0. Use the latest version of NVIM
