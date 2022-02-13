@@ -1,11 +1,11 @@
 vim.g.mapleader = ';'
 
 local function map(mode, lhs, rhs)
-    vim.api.nvim_set_keymap(mode, lhs, rhs, {noremap=true})
+vim.api.nvim_set_keymap(mode, lhs, rhs, {noremap=true})
 end
 
 local function mapcmd(key, cmd)
-    vim.api.nvim_set_keymap('n', key, ':'..cmd..'<cr>', {noremap=true})
+vim.api.nvim_set_keymap('n', key, ':'..cmd..'<cr>', {noremap=true})
 end
 
 -- keymaps
