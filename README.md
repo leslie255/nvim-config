@@ -1,4 +1,4 @@
-# My personal modern NeoVim config
+# My personal modern NeoVim config (Some parts are still WIP, but defintely usable)
 
 <p align="center">
 <img src="https://i.imgur.com/x3X4LWu.png" alt="Startup screen" width="70%"/><br>
@@ -8,7 +8,7 @@
 <img src="https://i.imgur.com/JIZE92B.png" alt="Startup screen" width="49%"/><br>
 </p>
 
-## Install
+## Setup
 0. Use the latest version of NVIM
 1. This setup uses packer.nvim for the package manager, so first install packer.nvim by following the [official instructions](https://github.com/wbthomason/packer.nvim#quickstart)
 2. Clone this repo into `~/.config/nvim`:
@@ -25,7 +25,11 @@ You can use the `:TSInstall <lang>` command to install a parser for a language<b
 Alternatively, in `lua/configs/treesitter.lua`, line `6`, you can have a list of parsers that will be updated everytime you use the `:TSUpdate` or `:TSUpdateSync` command (the latter is for synchronized updating), or you can just install all maintained parsers by uncommenting line `5` and commenting line `6`
 
 ## Usage
-> TODO, for now read `lua/core/keymaps.lua` for some reference
+> TODO: for now read `lua/core/keymaps.lua` for reference
+
+Note that the config uses `;` as the leader key by default, you can of course change it in `lua/core/keymaps.lua`, line `1`<br>
+Most keymaps in this setup are what I call declarative keymaps, for example, everything related to terminal emulator starts with `;t`, so `;tt` means "terminal toggle", and `;tn` means "terminal new"<br>
+Btw, tryout `;lb` in files with LSP support, it's really fancy!
 
 ## Contributing
 **Having troubles**<br>
