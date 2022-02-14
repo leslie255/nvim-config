@@ -61,7 +61,8 @@ return require('packer').startup(function()
     }
 
     -- startup screen
-    use 'goolord/alpha-nvim'
+--    use '~/Developer/aleph-nvim'
+    use 'p-z-l/aleph-nvim'
 
 end)
 
