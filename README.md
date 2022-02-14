@@ -1,4 +1,4 @@
-# My personal modern NeoVim config (Some parts are still WIP, but defintely usable)
+# My personal modern NeoVim config
 
 <p align="center">
 <img src="https://i.imgur.com/x3X4LWu.png" alt="Startup screen" width="70%"/><br>
