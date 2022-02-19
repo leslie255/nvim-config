@@ -17,7 +17,6 @@ end
 mapcmd('<leader>ft', 'NvimTreeToggle')
 mapcmd('<leader>ff', 'NvimTreeFocus')
 -- y: telescope
-local telescope = require('telescope.builtin')
 mapcmd('<leader>yo', "Telescope find_files")
 mapcmd('<leader>yg', "Telescope live_grep")
 mapcmd('<leader>yb', "Telescope buffers")
