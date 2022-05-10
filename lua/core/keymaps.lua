@@ -12,6 +12,8 @@ local function maplua(key, txt)
     vim.api.nvim_set_keymap('n', key, ':lua '..txt..'<cr>', {noremap=true})
 end
 
+mapkey('i', '<C-w>', '<C-x><C-k>')
+
 -- keymaps
 -- f: file tree
 mapcmd('<leader>ft', 'NvimTreeToggle')
