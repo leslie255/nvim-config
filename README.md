@@ -1,11 +1,11 @@
 # My personal modern NeoVim config
 
 <p align="center">
-<img src="https://i.imgur.com/x3X4LWu.png" alt="Startup screen" width="70%"/><br>
-<img src="https://i.imgur.com/Uy7542a.png" alt="Startup screen" width="49%"/>
-<img src="https://i.imgur.com/VmKLt06.png" alt="Startup screen" width="49%"/><br>
-<img src="https://i.imgur.com/bOxca0J.png" alt="Startup screen" width="49%"/>
-<img src="https://i.imgur.com/JIZE92B.png" alt="Startup screen" width="49%"/><br>
+<img src="https://i.imgur.com/f92Lc7Q.png" alt="Title screen" width="70%"/><br>
+<img src="https://i.imgur.com/pk77c1k.png" alt="Outline" width="49%"/>
+<img src="https://i.imgur.com/PjiHskD.png" alt="Git preview" width="49%"/><br>
+<img src="https://i.imgur.com/pUMg9di.png" alt="Git difference" width="49%"/>
+<img src="https://i.imgur.com/i9hcMbc.png" alt="Autocomplete" width="49%"/><br>
 </p>
 
 ## Setup
@@ -13,7 +13,7 @@
 1. This setup uses packer.nvim for the package manager, so first install packer.nvim by following the [official instructions](https://github.com/wbthomason/packer.nvim#quickstart)
 2. Clone this repo into `~/.config/nvim`:
 ```
-git clone https://github.com/p-z-l/nvim-config.git ~/.config/nvim
+git clone https://github.com/leslie255/nvim-config.git ~/.config/nvim
 ```
 3. When you first enter `nvim`, you will see a bunch of mess because the plugins aren't installed yet, so run `:PackerInstall` to install the plugins<br>
 > Note that there is a chance that the download would timeout and `packer.nvim` would report install failed, in this case run `:PackerInstall` again
