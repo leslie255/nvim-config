@@ -1,11 +1,11 @@
 # My personal modern NeoVim config
 
 <p align="center">
-<img src="https://i.imgur.com/x3X4LWu.png" alt="Startup screen" width="70%"/><br>
-<img src="https://i.imgur.com/Uy7542a.png" alt="Startup screen" width="49%"/>
-<img src="https://i.imgur.com/VmKLt06.png" alt="Startup screen" width="49%"/><br>
-<img src="https://i.imgur.com/bOxca0J.png" alt="Startup screen" width="49%"/>
-<img src="https://i.imgur.com/JIZE92B.png" alt="Startup screen" width="49%"/><br>
+<img src="https://i.imgur.com/f92Lc7Q.png" alt="Title screen" width="70%"/><br>
+<img src="https://i.imgur.com/pk77c1k.png" alt="Outline" width="49%"/>
+<img src="https://i.imgur.com/PjiHskD.png" alt="Git preview" width="49%"/><br>
+<img src="https://i.imgur.com/pUMg9di.png" alt="Git difference" width="49%"/>
+<img src="https://i.imgur.com/i9hcMbc.png" alt="Autocomplete" width="49%"/><br>
 </p>
 
 ## Setup
