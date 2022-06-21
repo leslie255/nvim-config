@@ -6,7 +6,6 @@ function M.config()
         hijack_netrw         = true,
         open_on_setup        = true,
         ignore_ft_on_setup   = {},
-        auto_close           = false,
         auto_reload_on_write = true,
         open_on_tab          = false,
         hijack_cursor        = false,

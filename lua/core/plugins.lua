@@ -17,12 +17,13 @@ return require('packer').startup(function()
 
     -- themes (disabled other themes to optimize startup time)
     use 'sainnhe/sonokai'
-    use 'folke/tokyonight.nvim'
+    use 'tiagovla/tokyodark.nvim'
 --    use 'joshdick/onedark.vim'
 --    use { 'catppuccin/nvim', as='catppuccin' }
 --    use { 'sonph/onehalf', rtp='vim/' }
 --    use 'liuchengxu/space-vim-dark'
 --    use 'ahmedabdulrahman/aylin.vim'
+    use "rebelot/kanagawa.nvim"
 
     -- file tree
     use {
@@ -42,7 +43,10 @@ return require('packer').startup(function()
     use 'onsails/lspkind-nvim'
 
     -- git
-    use 'airblade/vim-gitgutter' -- TODO: better git integration
+    use {
+        'lewis6991/gitsigns.nvim',
+        tag = 'release',
+    }
 
     -- status line
     use {
@@ -63,8 +67,7 @@ return require('packer').startup(function()
     }
 
     -- startup screen
---    use '~/Developer/aleph-nvim'
-    use 'p-z-l/aleph-nvim'
+    use 'leslie255/aleph-nvim'
 
 end)
 
