@@ -13,9 +13,9 @@ if (vim.fn.has('termguicolors') == 1) then
 end
 -- tabs
 vim.opt.autoindent      = true
-vim.opt.tabstop         = 8
-vim.opt.shiftwidth      = 8
-vim.opt.softtabstop     = 8
+vim.opt.tabstop         = 4
+vim.opt.shiftwidth      = 4
+vim.opt.softtabstop     = 4
 
 require("core.keymaps")
 require("core.plugins")

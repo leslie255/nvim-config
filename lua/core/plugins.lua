@@ -66,6 +66,9 @@ return require('packer').startup(function()
         requires = 'nvim-lua/plenary.nvim'
     }
 
+    -- indent guide
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- startup screen
     use 'leslie255/aleph-nvim'
 

@@ -3,6 +3,8 @@ lua require('core.init')
 set guifont=SFMono\ NERD\ Font:h16
 set clipboard^=unnamed,unnamedplus
 
+set colorcolumn=80
+
 if has('unix')
     set dictionary+=/usr/share/dict/words
 else
