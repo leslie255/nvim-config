@@ -74,7 +74,9 @@ vim.keymap.set('n', '<leader>tn', ':FloatermNew<cr>')
 -- h: git
 vim.keymap.set('n', '<leader>hu', ':Gitsigns undo_stage_hunk<cr>')
 vim.keymap.set('n', '<leader>hc', ':Gitsigns preview_hunk<cr>')
-vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line')
-vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis')
+vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<cr>')
+vim.keymap.set('n', '<leader>hR', ':Gitsigns reset_buffer')
+vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line<cr>')
+vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
 
