@@ -1,6 +1,6 @@
 lua require('core.init')
 
-set guifont=SFMono\ NERD\ Font:h16
+set guifont=SFMono\ NERD\ Font:h13
 set clipboard^=unnamed,unnamedplus
 
 set colorcolumn=80

@@ -40,7 +40,6 @@ require("core.theme")
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
-require("bufferline").setup()
 
 require("configs.autocomplete").config()
 require("configs.statusline").config()
@@ -49,4 +48,5 @@ require("configs.treesitter").config()
 require("configs.outlinetree").config()
 require("configs.startscreen").config()
 require("configs.git").config()
+require("configs.bufferline").config()
 
