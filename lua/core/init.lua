@@ -49,4 +49,5 @@ require("configs.outlinetree").config()
 require("configs.startscreen").config()
 require("configs.git").config()
 require("configs.bufferline").config()
+require("configs.grammar").config()
 
