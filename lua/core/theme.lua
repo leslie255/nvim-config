@@ -20,23 +20,27 @@
 --vim.g.tokyonight_colors = { hint = "orange", error = "#cb5550" }
 --vim.cmd('colorscheme sonokai')
 
+-- space vim dark
+vim.g.space_vim_dark_background = 234 -- 234 (darkest) ~ 238 (lightest)
+vim.cmd("colorscheme space-vim-dark");
+
 -- kanagwa
 -- Default options:
-require('kanagawa').setup({
-    undercurl = true,           -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    typeStyle = {},
-    variablebuiltinStyle = { italic = true},
-    specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords
-    transparent = false,        -- do not set background color
-    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-    globalStatus = false,       -- adjust window separators highlight for laststatus=3
-    colors = {},
-    overrides = {},
-})
+--require('kanagawa').setup({
+--    undercurl = true,           -- enable undercurls
+--    commentStyle = { italic = true },
+--    functionStyle = {},
+--    keywordStyle = { italic = true},
+--    statementStyle = { bold = true },
+--    typeStyle = {},
+--    variablebuiltinStyle = { italic = true},
+--    specialReturn = true,       -- special highlight for the return keyword
+--    specialException = true,    -- special highlight for exception handling keywords
+--    transparent = false,        -- do not set background color
+--    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+--    globalStatus = false,       -- adjust window separators highlight for laststatus=3
+--    colors = {},
+--    overrides = {},
+--})
 
-vim.cmd("colorscheme kanagawa")
+--vim.cmd("colorscheme kanagawa")

@@ -24,6 +24,8 @@ return require('packer').startup(function()
 	--    use 'liuchengxu/space-vim-dark'
 	--    use 'ahmedabdulrahman/aylin.vim'
 	use "rebelot/kanagawa.nvim"
+	use 'NLKNguyen/papercolor-theme'
+	use 'liuchengxu/space-vim-dark'
 
 	-- file tree
 	use {
