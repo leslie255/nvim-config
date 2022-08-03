@@ -18,6 +18,7 @@ vim.opt.shiftwidth      = 4
 vim.opt.softtabstop     = 4
 
 require("core.keymaps")
+--require("core.dvorak")	-- delete this line if you don't like using DVORAK
 require("core.plugins")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
@@ -50,4 +51,5 @@ require("configs.startscreen").config()
 require("configs.git").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
+
 

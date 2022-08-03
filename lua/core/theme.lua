@@ -21,8 +21,8 @@
 --vim.cmd('colorscheme sonokai')
 
 -- space vim dark
-vim.g.space_vim_dark_background = 234 -- 234 (darkest) ~ 238 (lightest)
-vim.cmd("colorscheme space-vim-dark");
+-- vim.g.space_vim_dark_background = 234 -- 234 (darkest) ~ 238 (lightest)
+-- vim.cmd("colorscheme space-vim-dark");
 
 -- kanagwa
 -- Default options:
@@ -44,3 +44,9 @@ vim.cmd("colorscheme space-vim-dark");
 --})
 
 --vim.cmd("colorscheme kanagawa")
+
+-- edge
+--vim.g.edge_style = 'aura' -- neon, aura
+vim.g.edge_better_performance = 1
+vim.cmd("colorscheme edge")
+vim.cmd("set background=dark")

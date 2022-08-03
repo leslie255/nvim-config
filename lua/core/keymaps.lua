@@ -1,7 +1,9 @@
 vim.g.mapleader = ';'
 
 -- keymaps
-vim.keymap.set('i', '<C-s>', '<esc>')
+vim.keymap.set('i', '<C-g>', '<esc>')
+vim.keymap.set('i', '<C-;>', '::')	-- for C++ and Rust
+vim.keymap.set('n', '\\', ':')
 -- f: file tree
 vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<cr>')
@@ -47,6 +49,7 @@ vim.keymap.set('n', '<leader>sw', '/\\<lt>\\><left><left>')
 -- l: general
 -- g: goto
 -- w: workspace
+-- c: lsp saga
 vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>lk', vim.lsp.buf.hover)
@@ -68,10 +71,19 @@ vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references)
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder)
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
 vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
+
+vim.keymap.set("n", "<leader>ca", ':Lspsaga code_action<cr>')
+vim.keymap.set("n", "<leader>cf", ':Lspsaga lsp_finder<cr>')
+vim.keymap.set("n", "<leader>cr", ':Lspsaga rename<cr>')
+vim.keymap.set("n", "<leader>cp", ':Lspsaga preview_definition<cr>')
+vim.keymap.set("n", "<leader>el", ':Lspsaga show_line_diagnostics<cr>')
+vim.keymap.set("n", "<leader>ew", ':Lspsaga show_cursor_diagnostics<cr>')
+vim.keymap.set("n", "<leader>en", ':Lspsaga diagnostic_jump_next<cr>')
+vim.keymap.set("n", "<leader>ep", ':Lspsaga diagnostic_jump_prev<cr>')
 -- t: terminal
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<cr>')
-vim.keymap.set('n', '<f2>', ':FloatermToggle<cr>')
-vim.keymap.set('t', '<f2>', '<c-\\><c-n>:FloatermToggle<return>')
+vim.keymap.set('n', '<f5>', ':FloatermToggle<cr>')
+vim.keymap.set('t', '<f5>', '<c-\\><c-n>:FloatermToggle<return>')
 vim.keymap.set('n', '<leader>tn', ':FloatermNew<cr>')
 -- h: git
 vim.keymap.set('n', '<leader>hu', ':Gitsigns undo_stage_hunk<cr>')
@@ -82,4 +94,3 @@ vim.keymap.set('n', '<leader>hR', ':Gitsigns reset_buffer')
 vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line<cr>')
 vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
-

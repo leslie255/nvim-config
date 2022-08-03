@@ -26,6 +26,7 @@ return require('packer').startup(function()
 	use "rebelot/kanagawa.nvim"
 	use 'NLKNguyen/papercolor-theme'
 	use 'liuchengxu/space-vim-dark'
+	use 'sainnhe/edge'
 
 	-- file tree
 	use {
@@ -35,6 +36,7 @@ return require('packer').startup(function()
 
 	-- language
 	use 'neovim/nvim-lspconfig'
+	use 'glepnir/lspsaga.nvim'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -42,7 +44,6 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'L3MON4D3/LuaSnip'
 	use 'nvim-treesitter/nvim-treesitter'
-	use 'onsails/lspkind-nvim'
 
 	-- git
 	use {
