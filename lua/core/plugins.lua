@@ -18,12 +18,13 @@ return require('packer').startup(function()
 	-- themes (disabled other themes to optimize startup time)
 	use 'sainnhe/sonokai'
 	use 'tiagovla/tokyodark.nvim'
-	--    use 'joshdick/onedark.vim'
-	--    use { 'catppuccin/nvim', as='catppuccin' }
-	--    use { 'sonph/onehalf', rtp='vim/' }
-	--    use 'liuchengxu/space-vim-dark'
-	--    use 'ahmedabdulrahman/aylin.vim'
-	use "rebelot/kanagawa.nvim"
+	use 'projekt0n/github-nvim-theme'
+	use 'joshdick/onedark.vim'
+	-- use { 'catppuccin/nvim', as='catppuccin' }
+	-- use { 'sonph/onehalf', rtp='vim/' }
+	-- use 'liuchengxu/space-vim-dark'
+	-- use 'ahmedabdulrahman/aylin.vim'
+	-- use "rebelot/kanagawa.nvim"
 	use 'NLKNguyen/papercolor-theme'
 	use 'liuchengxu/space-vim-dark'
 	use 'sainnhe/edge'

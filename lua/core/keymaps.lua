@@ -73,6 +73,7 @@ vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
 vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
 
 vim.keymap.set("n", "<leader>ca", ':Lspsaga code_action<cr>')
+vim.keymap.set("n", "<F12>", ':Lspsaga code_action<cr>')
 vim.keymap.set("n", "<leader>cf", ':Lspsaga lsp_finder<cr>')
 vim.keymap.set("n", "<leader>cr", ':Lspsaga rename<cr>')
 vim.keymap.set("n", "<leader>cp", ':Lspsaga preview_definition<cr>')
