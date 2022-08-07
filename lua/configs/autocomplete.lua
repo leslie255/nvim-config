@@ -194,6 +194,7 @@ function M.config()
 		server_filetype_map = {},
 	})
 
+	require('rust-tools').setup()
 
 end
 

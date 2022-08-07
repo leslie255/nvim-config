@@ -19,7 +19,7 @@ return require('packer').startup(function()
 	use 'sainnhe/sonokai'
 	use 'tiagovla/tokyodark.nvim'
 	use 'projekt0n/github-nvim-theme'
-	use 'joshdick/onedark.vim'
+	-- use 'joshdick/onedark.vim'
 	-- use { 'catppuccin/nvim', as='catppuccin' }
 	-- use { 'sonph/onehalf', rtp='vim/' }
 	-- use 'liuchengxu/space-vim-dark'
@@ -28,6 +28,7 @@ return require('packer').startup(function()
 	use 'NLKNguyen/papercolor-theme'
 	use 'liuchengxu/space-vim-dark'
 	use 'sainnhe/edge'
+	use 'B4mbus/oxocarbon-lua.nvim'
 
 	-- file tree
 	use {
@@ -45,6 +46,7 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'L3MON4D3/LuaSnip'
 	use 'nvim-treesitter/nvim-treesitter'
+	use 'simrat39/rust-tools.nvim'
 
 	-- git
 	use {
@@ -57,9 +59,6 @@ return require('packer').startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = 'kyazdani42/nvim-web-devicons'
 	}
-
-	-- tagbar
-	use 'simrat39/symbols-outline.nvim'
 
 	-- floating terminal
 	use 'voldikss/vim-floaterm'
