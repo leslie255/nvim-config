@@ -61,7 +61,7 @@ return require('packer').startup(function()
 	}
 
 	-- floating terminal
-	use 'voldikss/vim-floaterm'
+	use 'akinsho/toggleterm.nvim'
 
 	-- file telescope
 	use {
