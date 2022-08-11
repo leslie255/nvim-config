@@ -1,9 +1,25 @@
+local function set_bg_light()
+	vim.cmd('set background=light')
+	local colors_name = vim.g.colors_name
+	vim.cmd('colorscheme shine')
+	vim.cmd('colorscheme ' .. colors_name)
+end
+
+local function set_bg_dark()
+	vim.cmd('set background=dark')
+	local colors_name = vim.g.colors_name
+	vim.cmd('colorscheme ron')
+	vim.cmd('colorscheme ' .. colors_name)
+end
+
 vim.g.mapleader = ';'
 
 -- keymaps
 vim.keymap.set('i', '<C-g>', '<esc>')
 vim.keymap.set('i', '<C-;>', '::') -- for C++ and Rust
-vim.keymap.set('n', '\\', ':')
+vim.keymap.set('n', '<leader>vl', set_bg_light)
+vim.keymap.set('n', '<leader>vd', set_bg_dark)
+vim.keymap.set('n', '<leader>', ':')
 -- f: file tree
 vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<cr>')
@@ -75,8 +91,9 @@ vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_
 -- t: terminal
 -- use <f5> to toggle terminal, this can be set in lua/configs/terminal.lua
 -- the default position is also set in lua/configs/terminal.lua
-vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<C-g>', '<C-\\><C-n>')
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=tab<cr>')
+vim.keymap.set('n', '<leader>tn', function() require('toggleterm.terminal').Terminal:new():toggle() end)
 vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<cr>')
 vim.keymap.set('n', '<leader>th', ':ToggleTerm direction=horizontal<cr>')
 vim.keymap.set('n', '<leader>tv', ':ToggleTerm direction=vertical<cr>')

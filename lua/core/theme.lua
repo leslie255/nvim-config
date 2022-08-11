@@ -49,7 +49,7 @@
 vim.g.edge_style = 'aura' -- neon, aura
 vim.g.edge_better_performance = 1
 vim.cmd("colorscheme edge")
-vim.cmd("set background=dark")
+vim.cmd("set background=light")
 
 -- github
 -- vim.cmd("colorscheme github_dark")
