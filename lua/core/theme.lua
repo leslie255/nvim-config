@@ -53,4 +53,4 @@ vim.cmd("colorscheme edge")
 -- github
 -- vim.cmd("colorscheme github_dark")
 
-vim.cmd("set background=light")
+vim.cmd("set background=dark")

@@ -29,6 +29,7 @@ return require('packer').startup(function()
 	use 'liuchengxu/space-vim-dark'
 	use 'sainnhe/edge'
 	use 'B4mbus/oxocarbon-lua.nvim'
+	use 'Th3Whit3Wolf/one-nvim'
 
 	-- file tree
 	use {
@@ -47,6 +48,7 @@ return require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'simrat39/rust-tools.nvim'
+	use 'simrat39/symbols-outline.nvim'
 
 	-- git
 	use {
