@@ -30,10 +30,6 @@ vim.keymap.set('n', '<F10>', function() require 'telescope.builtin'.git_files {}
 vim.keymap.set('n', '<F11>', function() require 'telescope.builtin'.buffers {} end)
 vim.keymap.set({ 'n', 'i' }, '<C-p>', function() require 'telescope.builtin'.registers {} end)
 -- w: window
-vim.keymap.set('n', '<leader>wh', '<c-w>h')
-vim.keymap.set('n', '<leader>wj', '<c-w>j')
-vim.keymap.set('n', '<leader>wk', '<c-w>k')
-vim.keymap.set('n', '<leader>wl', '<c-w>l')
 vim.keymap.set('n', '<leader>w1', '<c-w>o')
 vim.keymap.set('n', '<leader>wx', ':x<cr>')
 vim.keymap.set('n', '<leader>w2', ':sp<cr>')

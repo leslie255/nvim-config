@@ -105,7 +105,7 @@ function M.config()
 	-- List of all pre-configured LSP servers:
 	-- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	require 'lspconfig'.gopls.setup {}
-	local servers = { 'ccls', 'rust_analyzer', 'pylsp', 'sumneko_lua' }
+	local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'sumneko_lua' }
 	for _, lsp in pairs(servers) do
 		require('lspconfig')[lsp].setup {
 			on_attach = on_attach
