@@ -1,3 +1,5 @@
+vim.g.mapleader = ';'
+
 local function set_bg_light()
 	vim.cmd('set background=light')
 	local colors_name = vim.g.colors_name
@@ -11,8 +13,6 @@ local function set_bg_dark()
 	vim.cmd('colorscheme ron')
 	vim.cmd('colorscheme ' .. colors_name)
 end
-
-vim.g.mapleader = ';'
 
 -- keymaps
 vim.keymap.set('i', '<C-g>', '<esc>')
