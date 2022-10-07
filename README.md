@@ -45,6 +45,12 @@ I switch between a few themes sometimes during my usage just to fresh things up 
 
 They are supposed to be the fancy file and arrow icons, to use these icons you need Nerd Fonts, a special kind of font that supports these icons.
 
+> Why does it have a bunch of error messages?
+
+First check if you have followed the setup instructions.
+
+If you have, it's probably because the config is for older versions of NeoVim or the plugins and I haven't updated it yet. Check the latest update date, if it's over a few months then it's likely that, if you know what exactly is broken with the update please open an issue.
+
 ## Contributing
 ### Having troubles
 
