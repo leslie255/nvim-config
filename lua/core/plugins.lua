@@ -83,4 +83,7 @@ return require('packer').startup(function()
 	-- ascii image
 	use 'samodostal/image.nvim'
 
+    -- decorated scrollbar
+    use 'lewis6991/satellite.nvim'
+
 end)
