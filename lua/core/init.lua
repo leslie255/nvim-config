@@ -52,7 +52,7 @@ require('image').setup {
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
-require('satellite').setup()
+--require('satellite').setup()
 
 require("configs.autocomplete").config()
 require("configs.symbols_outline").config()
