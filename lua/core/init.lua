@@ -21,9 +21,9 @@ vim.opt.expandtab   = true
 vim.opt.autowrite   = false
 vim.opt.formatoptions = ''
 
-require("core.keymaps")
 --require("core.dvorak")	-- delete this line if you don't like using DVORAK
 require("core.plugins")
+require("core.keymaps")
 require("core.gui")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
