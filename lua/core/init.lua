@@ -9,19 +9,22 @@ vim.opt.updatetime     = 100
 vim.opt.cursorline     = true
 vim.opt.autowrite      = true
 if (vim.fn.has('termguicolors') == 1) then
-	vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
 -- tabs
-vim.opt.autoindent  = true
-vim.opt.tabstop     = 4
-vim.opt.shiftwidth  = 4
-vim.opt.softtabstop = 4
-vim.opt.mouse       = 'a'
-vim.opt.expandtab   = true
-vim.opt.autowrite   = false
+vim.opt.autoindent    = true
+vim.opt.tabstop       = 4
+vim.opt.shiftwidth    = 4
+vim.opt.softtabstop   = 4
+vim.opt.mouse         = 'a'
+vim.opt.expandtab     = true
+vim.opt.autowrite     = false
 vim.opt.formatoptions = ''
 
+<<<<<<< HEAD
 --require("core.dvorak")	-- delete this line if you don't like using DVORAK
+=======
+>>>>>>> 303a45b (Added nvim-ide and changed some other things)
 require("core.plugins")
 require("core.keymaps")
 require("core.gui")
@@ -44,23 +47,27 @@ vim.g.loaded_remote_plugins    = 1
 require("core.theme")
 
 require('image').setup {
-	min_padding = 5,
-	show_label = true,
-	render_using_dither = true,
+    min_padding = 5,
+    show_label = true,
+    render_using_dither = true,
 }
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
---require('satellite').setup()
+-- duck lol
+local duck = require("duck")
+vim.keymap.set('n', '<leader>dd', function() duck.hatch("🦆", 1) end, {})
+vim.keymap.set('n', '<leader>dk', function() duck.cook() end, {})
 
 require("configs.autocomplete").config()
-require("configs.symbols_outline").config()
 require("configs.statusline").config()
-require("configs.filetree").config()
 require("configs.treesitter").config()
 require("configs.startscreen").config()
 require("configs.git").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.terminal").config()
+require("configs.ide").config()
+
+require("core.keymaps")
