@@ -19,14 +19,10 @@ vim.opt.softtabstop   = 4
 vim.opt.mouse         = 'a'
 vim.opt.expandtab     = true
 vim.opt.autowrite     = false
+vim.opt.wrap          = false
 vim.opt.formatoptions = ''
 
-<<<<<<< HEAD
---require("core.dvorak")	-- delete this line if you don't like using DVORAK
-=======
->>>>>>> 303a45b (Added nvim-ide and changed some other things)
 require("core.plugins")
-require("core.keymaps")
 require("core.gui")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
