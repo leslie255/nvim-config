@@ -1,12 +1,12 @@
 # My personal modern NeoVim config
 
-<p align="center">
-<img src="https://i.imgur.com/f92Lc7Q.png" alt="Title screen" width="70%"/><br>
-<img src="https://i.imgur.com/pk77c1k.png" alt="Outline" width="49%"/>
-<img src="https://i.imgur.com/PjiHskD.png" alt="Git preview" width="49%"/><br>
-<img src="https://i.imgur.com/pUMg9di.png" alt="Git difference" width="49%"/>
-<img src="https://i.imgur.com/i9hcMbc.png" alt="Autocomplete" width="49%"/><br>
-</p>
+
+<img src="https://i.imgur.com/MRHEtoO.png" alt="Autocomplete" width="49%"/>
+<img src="https://i.imgur.com/6favuEM.png" alt="Git diff" width="49%"/><br>
+<img src="https://i.imgur.com/adZiidz.png" alt="Doc preview" width="49%"/>
+<img src="https://i.imgur.com/FWuzSqD.png" alt="Glance" width="49%"/><br>
+<img src="https://i.imgur.com/lh8K1GW.png" alt="Floating terminal" width="49%"/><br>
+<img src="https://i.imgur.com/N61fK6b.png" alt="Telescope search" width="49%"/><br>
 
 ## Setup
 0. Use the latest version of NVIM
