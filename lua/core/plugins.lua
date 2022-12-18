@@ -3,7 +3,10 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
-    -- IDE-like file, outline panels
+    use 'nvim-lua/plenary.nvim'
+    use 'MunifTanjim/nui.nvim'
+
+    -- IDE-like panels
     use 'ldelossa/nvim-ide'
 
     -- starup time optimise
@@ -26,18 +29,12 @@ return require('packer').startup(function()
     -- use { 'sonph/onehalf', rtp='vim/' }
     -- use 'liuchengxu/space-vim-dark'
     -- use 'ahmedabdulrahman/aylin.vim'
-    -- use "rebelot/kanagawa.nvim"
+    -- use 'rebelot/kanagawa.nvim'
     use 'NLKNguyen/papercolor-theme'
     use 'liuchengxu/space-vim-dark'
     use 'sainnhe/edge'
     use 'B4mbus/oxocarbon-lua.nvim'
     use 'Th3Whit3Wolf/one-nvim'
-
-    -- file tree
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
 
     -- language
     use 'neovim/nvim-lspconfig'
@@ -50,6 +47,12 @@ return require('packer').startup(function()
     use 'L3MON4D3/LuaSnip'
     use 'nvim-treesitter/nvim-treesitter'
     use 'simrat39/rust-tools.nvim'
+    use 'dnlhc/glance.nvim'
+
+    use {
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+    }
 
     -- git
     use {
@@ -73,7 +76,7 @@ return require('packer').startup(function()
     }
 
     -- indent guide
-    use "lukas-reineke/indent-blankline.nvim"
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- startup screen
     use 'leslie255/aleph-nvim'
@@ -86,5 +89,8 @@ return require('packer').startup(function()
 
     -- duck lol
     use 'tamton-aquib/duck.nvim'
+
+    -- AI completion!
+    use 'aduros/ai.vim'
 
 end)

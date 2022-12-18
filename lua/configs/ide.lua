@@ -2,16 +2,14 @@ local M = {}
 
 function M.config()
     -- default components
-    local bufferlist     = require("ide.components.bufferlist")
-    local explorer       = require("ide.components.explorer")
-    local outline        = require("ide.components.outline")
-    local callhierarchy  = require("ide.components.callhierarchy")
-    local timeline       = require("ide.components.timeline")
-    local terminal       = require("ide.components.terminal")
-    local changes        = require("ide.components.changes")
-    local commits        = require("ide.components.commits")
-    local branches       = require("ide.components.branches")
-    local bookmarks      = require("ide.components.bookmarks")
+    local bufferlist = require("ide.components.bufferlist")
+    local explorer   = require("ide.components.explorer")
+    local outline    = require("ide.components.outline")
+    local timeline   = require("ide.components.timeline")
+    local terminal   = require("ide.components.terminal")
+    local changes    = require("ide.components.changes")
+    local commits    = require("ide.components.commits")
+    local branches   = require("ide.components.branches")
 
     require("ide").setup({
         -- The global icon set to use.
@@ -30,26 +28,50 @@ function M.config()
                 minimize = "-",
                 hide = "X",
             },
-            -- example, prefer "x" for hide only for Explorer component.
-            -- Explorer = {
-            --     keymaps = {
-            --         hide = "x",
-            --     }
-            -- }
+            Explorer = {
+                list_directories_first = true,
+                disabled_keymaps = false,
+                keymaps = {
+                    change_dir = "<NOP>",
+                    close = "X",
+                    collapse = "zc",
+                    collapse_all = "<NOP>",
+                    copy_file = "p",
+                    delete_file = "d",
+                    deselect_file = "<S-SPACE>",
+                    edit = "<CR>",
+                    edit_split = "<C-x>",
+                    edit_tab = "<C-t>",
+                    edit_vsplit = "<C-v>",
+                    expand = "zo",
+                    file_details = "f",
+                    hide = "<NOP>",
+                    maximize = "+",
+                    minimize = "-",
+                    move_file = "m",
+                    new_dir = "<NOP>",
+                    new_file = "a",
+                    rename_file = "r",
+                    select_file = "<Space>",
+                    toggle_exec_perm = "<NOP>",
+                    up_dir = "<NOP>",
+                }
+            }
         },
         -- default panel groups to display on left and right.
         panels = {
             left = "explorer",
             right = "git",
-            terminal = "terminal",
         },
         -- panels defined by groups of components, user is free to redefine the defaults
         -- and/or add additional.
         panel_groups = {
             explorer = {
+                bufferlist.Name,
                 outline.Name,
                 explorer.Name,
             },
+            terminal = { terminal.Name },
             git = {
                 changes.Name,
                 timeline.Name,

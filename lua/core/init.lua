@@ -1,4 +1,4 @@
--- basics
+-- basicsinit
 vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
 vim.opt.number         = true
@@ -51,10 +51,17 @@ require('image').setup {
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
+
 -- duck lol
 local duck = require("duck")
 vim.keymap.set('n', '<leader>dd', function() duck.hatch("🦆", 1) end, {})
 vim.keymap.set('n', '<leader>dk', function() duck.cook() end, {})
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 require("configs.autocomplete").config()
 require("configs.statusline").config()

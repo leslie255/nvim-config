@@ -10,11 +10,16 @@
 
 ## Setup
 0. Use the latest version of NVIM
-1. This setup uses packer.nvim for the package manager, so first install packer.nvim by following the [official instructions](https://github.com/wbthomason/packer.nvim#quickstart)
+1. Install `packer.nvim`
+
+This setup uses `packer.nvim` as package manager, so first install `packer.nvim` by following the [official instructions](https://github.com/wbthomason/packer.nvim#quickstart)
+
 2. Clone this repo into `~/.config/nvim`:
+
 ```
 git clone https://github.com/leslie255/nvim-config.git ~/.config/nvim
 ```
+
 3. When you first enter `nvim`, you will see a bunch of mess because the plugins aren't installed yet, so run `:PackerInstall` to install the plugins
 
 > Note that there is a chance that the download would timeout and `packer.nvim` would report install failed, in this case run `:PackerInstall` again
@@ -28,6 +33,11 @@ The default vim regex-based highlighting is pretty lame, for NVIM, [treesitter](
 You can use the `:TSInstall <lang>` command to install a parser for a language
 
 Alternatively, in `lua/configs/treesitter.lua`, line `6`, you can have a list of parsers that will be updated every time you use the `:TSUpdate` or `:TSUpdateSync` command (the latter is for synchronized updating), or you can just install all maintained parsers by uncommenting line `5` and commenting line `6`
+
+6. AI completion (optional)
+
+This config also uses `ai.nvim` plugin for AI completion, which requires you set an environmental variable called `OPENAI_API_KEY`. You can get an OpenAI API key [here](https://beta.openai.com/api/).
+After that, you can use `<C-a>` to activate AI completion, you can either add a comment telling the AI what to do, or send it a message using `:AI <message>`.
 
 ## Usage
 > TODO: for now read `lua/core/keymaps.lua` for the keymaps
