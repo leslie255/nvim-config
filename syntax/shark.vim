@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 syn case match
-syn keyword sharkKeyword alias allow break case continue copy else enum extern for if import in local loop return static switch typedef while
+syn keyword sharkKeyword as alias break continue else enum extern fn for if let loop mut pub return static struct true typedef union while
 syn keyword sharkBool true false
 syn keyword sharkPreProc elif else end endif ifpin include macro pin asm
 syn keyword sharkTypeNames u8 u16 u32 u64 i8 i16 i32 i64 usize isize f32 f64 none

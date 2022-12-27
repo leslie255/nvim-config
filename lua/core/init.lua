@@ -73,4 +73,6 @@ require("configs.grammar").config()
 require("configs.terminal").config()
 require("configs.ide").config()
 
+-- require("configs.lang.rust").config()
+
 require("core.keymaps")

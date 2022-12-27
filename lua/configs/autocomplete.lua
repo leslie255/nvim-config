@@ -60,18 +60,14 @@ function M.config()
             { name = 'cmdline' }
         })
     })
-
     local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
-
     local luasnip = require("luasnip")
 
     cmp.setup({
-
         mapping = {
-
             ["<C-n>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
@@ -83,7 +79,6 @@ function M.config()
                     fallback()
                 end
             end, { "i", "s" }),
-
             ["<C-p>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_prev_item()
@@ -93,21 +88,8 @@ function M.config()
                     fallback()
                 end
             end, { "i", "s" }),
-
-            -- ... Your other mappings ...
         },
-
-        -- ... Your other configuration ...
     })
-
-    -- nvim-lspconfig config
-    -- List of all pre-configured LSP servers:
-    -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'sumneko_lua', 'sourcekit' }
-    for _, lsp in pairs(servers) do
-        require('lspconfig')[lsp].setup {}
-    end
-
     local devicons = require('nvim-web-devicons')
     cmp.register_source('devicons', {
         complete = function(_, _, callback)
@@ -123,9 +105,15 @@ function M.config()
         end,
     })
 
-    local saga = require 'lspsaga'
+    -- nvim-lspconfig config
+    -- List of all pre-configured LSP servers:
+    -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'sumneko_lua', 'sourcekit' }
+    for _, lsp in pairs(servers) do
+        require('lspconfig')[lsp].setup {}
+    end
 
-    -- use default config
+    local saga = require 'lspsaga'
     saga.init_lsp_saga({
         -- Options with default value
         -- "single" | "double" | "rounded" | "bold" | "plus"
@@ -231,9 +219,6 @@ function M.config()
         server_filetype_map = {},
     })
 
-    require('rust-tools').setup()
-
-    -- Lua configuration
     local glance = require('glance')
     local actions = glance.actions
 
