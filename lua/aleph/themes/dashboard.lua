@@ -19,7 +19,7 @@ local header = {
 
 local footer = {
     type = "text",
-    val = "- config by ptrzl -",
+    val = "Help poor children in Uganda!",
     opts = {
         position = "center",
         hl = "Number",
