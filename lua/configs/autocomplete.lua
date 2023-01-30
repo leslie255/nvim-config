@@ -114,7 +114,7 @@ function M.config()
     end
 
     local saga = require 'lspsaga'
-    saga.init_lsp_saga({
+    saga.setup({
         -- Options with default value
         -- "single" | "double" | "rounded" | "bold" | "plus"
         border_style = "bold",
