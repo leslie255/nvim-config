@@ -72,6 +72,8 @@ require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.terminal").config()
 require("configs.ide").config()
+require("configs.scrollbar").config()
+require("configs.telescope").config()
 
 -- require("configs.lang.rust").config()
 

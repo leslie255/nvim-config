@@ -25,10 +25,11 @@ vim.keymap.set('n', '<leader>w8', ':Workspace LeftPanelToggle<cr>')
 vim.keymap.set('n', '<leader>w9', ':Workspace RightPanelToggle<cr>')
 vim.keymap.set('n', '<leader>w0', ':Workspace BottomPanelToggle<cr>')
 -- y: telescope
-vim.keymap.set('n', '<F9>', function() require 'telescope.builtin'.find_files {} end)
-vim.keymap.set('n', '<F10>', function() require 'telescope.builtin'.git_files {} end)
-vim.keymap.set('n', '<F11>', function() require 'telescope.builtin'.buffers {} end)
-vim.keymap.set({ 'n', 'i' }, '<C-p>', function() require 'telescope.builtin'.registers {} end)
+local telescope = require 'telescope.builtin'
+vim.keymap.set('n', '<F9>', function() telescope.find_files {} end)
+vim.keymap.set('n', '<F10>', function() telescope.git_files {} end)
+vim.keymap.set('n', '<F11>', function() telescope.buffers {} end)
+vim.keymap.set({ 'n', 'i' }, '<C-p>', function() telescope.registers {} end)
 -- w: window
 vim.keymap.set('n', '<leader>w1', '<c-w>o')
 vim.keymap.set('n', '<leader>wx', ':x<cr>')

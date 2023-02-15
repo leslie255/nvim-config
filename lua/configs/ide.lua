@@ -34,16 +34,16 @@ function M.config()
                 keymaps = {
                     change_dir = "<NOP>",
                     close = "X",
-                    collapse = "zc",
+                    collapse = "c",
                     collapse_all = "<NOP>",
-                    copy_file = "p",
+                    copy_file = "y",
                     delete_file = "d",
                     deselect_file = "<S-SPACE>",
                     edit = "<CR>",
                     edit_split = "<C-x>",
                     edit_tab = "<C-t>",
                     edit_vsplit = "<C-v>",
-                    expand = "zo",
+                    expand = "o",
                     file_details = "f",
                     hide = "<NOP>",
                     maximize = "+",
@@ -67,7 +67,6 @@ function M.config()
         -- and/or add additional.
         panel_groups = {
             explorer = {
-                bufferlist.Name,
                 outline.Name,
                 explorer.Name,
             },

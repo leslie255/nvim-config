@@ -6,7 +6,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'MunifTanjim/nui.nvim'
 
-    -- IDE-like panels
+    -- IDE-like side panels
     use 'ldelossa/nvim-ide'
 
     -- starup time optimise
@@ -70,6 +70,7 @@ return require('packer').startup(function()
     use 'akinsho/toggleterm.nvim'
 
     -- file telescope
+    use 'BurntSushi/ripgrep'
     use {
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
@@ -81,16 +82,16 @@ return require('packer').startup(function()
     -- startup screen
     use 'leslie255/aleph-nvim'
 
-    -- english grammar check
-    use 'rhysd/vim-grammarous'
+    -- scroll bar
+    use 'petertriho/nvim-scrollbar'
 
     -- ascii image
     use 'samodostal/image.nvim'
 
-    -- duck lol
-    use 'tamton-aquib/duck.nvim'
-
     -- AI completion!
     use 'aduros/ai.vim'
+
+    -- duck lol
+    use 'tamton-aquib/duck.nvim'
 
 end)
