@@ -67,8 +67,8 @@ function M.config()
         -- and/or add additional.
         panel_groups = {
             explorer = {
-                outline.Name,
                 explorer.Name,
+                outline.Name,
             },
             terminal = { terminal.Name },
             git = {

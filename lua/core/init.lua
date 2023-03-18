@@ -75,6 +75,6 @@ require("configs.ide").config()
 require("configs.scrollbar").config()
 require("configs.telescope").config()
 
--- require("configs.lang.rust").config()
+require("configs.lang.rust").config()
 
 require("core.keymaps")

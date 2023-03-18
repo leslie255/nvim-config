@@ -48,6 +48,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'simrat39/rust-tools.nvim'
     use 'dnlhc/glance.nvim'
+    use 'tamago324/nlsp-settings.nvim'
 
     use {
         'folke/trouble.nvim',
