@@ -6,8 +6,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'MunifTanjim/nui.nvim'
 
-    -- IDE-like side panels
-    use 'ldelossa/nvim-ide'
+    use 'nvim-tree/nvim-tree.lua'
 
     -- starup time optimise
     use 'dstein64/vim-startuptime'
@@ -24,17 +23,17 @@ return require('packer').startup(function()
     use 'sainnhe/sonokai'
     use 'tiagovla/tokyodark.nvim'
     use 'projekt0n/github-nvim-theme'
-    -- use 'joshdick/onedark.vim'
-    -- use { 'catppuccin/nvim', as='catppuccin' }
+    use 'joshdick/onedark.vim'
+    use { 'catppuccin/nvim', as='catppuccin' }
     -- use { 'sonph/onehalf', rtp='vim/' }
     -- use 'liuchengxu/space-vim-dark'
     -- use 'ahmedabdulrahman/aylin.vim'
     -- use 'rebelot/kanagawa.nvim'
     use 'NLKNguyen/papercolor-theme'
-    use 'liuchengxu/space-vim-dark'
+    -- use 'liuchengxu/space-vim-dark'
     use 'sainnhe/edge'
     use 'B4mbus/oxocarbon-lua.nvim'
-    use 'Th3Whit3Wolf/one-nvim'
+    -- use 'Th3Whit3Wolf/one-nvim'
 
     -- language
     use 'neovim/nvim-lspconfig'
@@ -86,13 +85,17 @@ return require('packer').startup(function()
     -- scroll bar
     use 'petertriho/nvim-scrollbar'
 
-    -- ascii image
-    use 'samodostal/image.nvim'
-
     -- AI completion!
     use 'aduros/ai.vim'
 
     -- duck lol
     use 'tamton-aquib/duck.nvim'
 
+    -- leetcode
+    use { "Dhanus3133/LeetBuddy.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        }
+    }
 end)

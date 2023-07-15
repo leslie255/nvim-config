@@ -118,12 +118,27 @@ function M.config()
     -- nvim-lspconfig config
     -- List of all pre-configured LSP servers:
     -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    local servers = { 'rust_analyzer', 'pylsp', 'clangd', 'html', 'cssls' }
+    local servers = { 'rust_analyzer', 'pylsp', 'clangd', 'html', 'cssls', 'sourcekit' }
     for _, lsp in pairs(servers) do
         require('lspconfig')[lsp].setup {}
     end
 
-    require("lspsaga").setup({})
+    require("lspsaga").setup({
+        ui = {
+            -- This option only works in Neovim 0.9
+            title = true,
+            -- Border type can be single, double, rounded, solid, shadow.
+            border = "single",
+            winblend = 0,
+            expand = " ",
+            collapse = " ",
+            code_action = " ",
+            incoming = " ",
+            outgoing = " ",
+            hover = ' ',
+            kind = {},
+        },
+    })
 
     local glance = require('glance')
     local actions = glance.actions
@@ -134,7 +149,7 @@ function M.config()
         preview_win_opts = { -- Configure preview window options
             cursorline = true,
             number = true,
-            wrap = true,
+            wrap = false,
         },
         border = {
             enable = false, -- Show window borders. Only horizontal borders allowed
@@ -147,7 +162,7 @@ function M.config()
         },
         theme = { -- This feature might not work properly in nvim-0.7.2
             enable = true, -- Will generate colors for the plugin based on your current colorscheme
-            mode = 'auto', -- 'brighten'|'darken'|'auto', 'auto' will set mode based on the brightness of your colorscheme
+            mode = 'darken', -- 'brighten'|'darken'|'auto', 'auto' will set mode based on the brightness of your colorscheme
         },
         mappings = {
             list = {
