@@ -21,6 +21,7 @@ vim.opt.expandtab     = true
 vim.opt.autowrite     = false
 vim.opt.wrap          = false
 vim.opt.formatoptions = ''
+vim.opt.signcolumn = "yes" -- prevent sign column flickering
 
 require("core.plugins")
 require("core.gui")
@@ -40,16 +41,10 @@ vim.g.loaded_netrw             = 1
 vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
-require("core.theme")
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
-
--- duck lol
-local duck = require("duck")
-vim.keymap.set('n', '<leader>dd', function() duck.hatch("🦆", 1) end, {})
-vim.keymap.set('n', '<leader>dk', function() duck.cook() end, {})
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
@@ -73,3 +68,5 @@ require("configs.leetcode").config()
 require("configs.lang.rust").config()
 
 require("core.keymaps")
+
+require("core.theme")

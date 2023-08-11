@@ -48,12 +48,12 @@
 -- edge
 vim.g.edge_style = 'aura' -- neon, aura
 vim.g.edge_better_performance = 1
-vim.cmd("colorscheme edge")
+-- vim.cmd("colorscheme edge")
 
 -- github
--- vim.cmd("colorscheme github_dark_default")
+-- vim.cmd("colorscheme github_dark_high_contrast")
 
 -- oxocarbon
--- vim.cmd("colorscheme oxocarbon-lua")
+vim.cmd("colorscheme oxocarbon")
 
 vim.cmd("set background=dark")

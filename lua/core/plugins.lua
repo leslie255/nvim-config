@@ -32,7 +32,7 @@ return require('packer').startup(function()
     use 'NLKNguyen/papercolor-theme'
     -- use 'liuchengxu/space-vim-dark'
     use 'sainnhe/edge'
-    use 'B4mbus/oxocarbon-lua.nvim'
+    use 'nyoom-engineering/oxocarbon.nvim'
     -- use 'Th3Whit3Wolf/one-nvim'
 
     -- language
@@ -84,9 +84,6 @@ return require('packer').startup(function()
 
     -- scroll bar
     use 'petertriho/nvim-scrollbar'
-
-    -- AI completion!
-    use 'aduros/ai.vim'
 
     -- duck lol
     use 'tamton-aquib/duck.nvim'
