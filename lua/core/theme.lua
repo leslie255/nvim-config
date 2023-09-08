@@ -54,6 +54,9 @@ vim.g.edge_better_performance = 1
 -- vim.cmd("colorscheme github_dark_high_contrast")
 
 -- oxocarbon
-vim.cmd("colorscheme oxocarbon")
+-- vim.cmd("colorscheme oxocarbon")
+
+-- nordic
+vim.cmd("colorscheme nordic")
 
 vim.cmd("set background=dark")

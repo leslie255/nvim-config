@@ -19,7 +19,7 @@ return require('packer').startup(function()
     }
     use 'moll/vim-bbye' -- for more sensible delete buffer cmd
 
-    -- themes (disabled other themes to optimize startup time)
+    -- themes
     use 'sainnhe/sonokai'
     use 'tiagovla/tokyodark.nvim'
     use 'projekt0n/github-nvim-theme'
@@ -34,6 +34,7 @@ return require('packer').startup(function()
     use 'sainnhe/edge'
     use 'nyoom-engineering/oxocarbon.nvim'
     -- use 'Th3Whit3Wolf/one-nvim'
+    use 'AlexvZyl/nordic.nvim'
 
     -- language
     use 'neovim/nvim-lspconfig'
@@ -80,7 +81,10 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- startup screen
-    use 'leslie255/aleph-nvim'
+    use {
+        'goolord/alpha-nvim',
+        requires = 'nvim-tree/nvim-web-devicons',
+    }
 
     -- scroll bar
     use 'petertriho/nvim-scrollbar'
