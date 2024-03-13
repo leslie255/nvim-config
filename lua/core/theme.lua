@@ -46,8 +46,8 @@
 --vim.cmd("colorscheme kanagawa")
 
 -- edge
-vim.g.edge_style = 'aura' -- neon, aura
-vim.g.edge_better_performance = 1
+-- vim.g.edge_style = 'aura' -- neon, aura
+-- vim.g.edge_better_performance = 1
 -- vim.cmd("colorscheme edge")
 
 -- github
@@ -57,6 +57,6 @@ vim.g.edge_better_performance = 1
 -- vim.cmd("colorscheme oxocarbon")
 
 -- nordic
-vim.cmd("colorscheme nordic")
+vim.cmd("colorscheme sonokai")
 
 vim.cmd("set background=dark")

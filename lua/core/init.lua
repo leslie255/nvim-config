@@ -23,8 +23,10 @@ vim.opt.wrap          = false
 vim.opt.formatoptions = ''
 vim.opt.signcolumn = "yes" -- prevent sign column flickering
 
-require("core.plugins")
-require("core.gui")
+-- leader key has to be done before setting up lazy.nvim
+vim.g.mapleader = ";"
+vim.g.maplocalleader = "\\"
+
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
 vim.g.loaded_matchparen        = 1
@@ -42,15 +44,23 @@ vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
 
--- Load plugin configs
--- plugins without extra configs are configured directly here
-require("impatient")
+-- setup lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-}
+require("core.plugins")
+
+require("core.gui")
 
 require("configs.autocomplete").config()
 require("configs.statusline").config()
@@ -63,10 +73,7 @@ require("configs.terminal").config()
 require("configs.nvimtree").config()
 require("configs.scrollbar").config()
 require("configs.telescope").config()
-require("configs.leetcode").config()
-
 require("configs.lang.rust").config()
 
 require("core.keymaps")
-
 require("core.theme")
