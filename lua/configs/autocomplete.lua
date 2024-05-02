@@ -2,69 +2,67 @@ local M = {}
 
 function M.config()
     -- Setup nvim-cmp.
-    local cmp = require 'cmp'
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    local has_words_before = function()
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
     cmp.setup({
-        snippet = {
-            -- REQUIRED - you must specify a snippet engine
-            expand = function(args)
-                -- luasnip
-                require('luasnip').lsp_expand(args.body)
-                -- vsnip
-                -- vim.fn["vsnip#anonymous"](args.body)
-                -- snippy
-                -- require('snippy').expand_snippet(args.body)
-                -- ultisnip
-                -- vim.fn["UltiSnips#Anon"](args.body)
-            end,
-        },
-        mapping = {
-            ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-            ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-            ['<C-y>'] = cmp.config.disable,
-            ['<C-e>'] = cmp.mapping({
-                i = cmp.mapping.abort(),
-                c = cmp.mapping.close(),
-            }),
-            -- Accept currently selected item...
-            -- Set `select` to `false` to only confirm explicitly selected items:
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        },
-        sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            -- { name = 'luasnip' }, -- For luasnip users.
-            -- { name = 'ultisnips' }, -- For ultisnips users.
-            -- { name = 'snippy' }, -- For snippy users.
-        }, { { name = 'buffer' } })
+      snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+      },
+      window = {
+          -- completion = cmp.config.window.bordered(),
+          -- documentation = cmp.config.window.bordered(),
+      },
+      mapping = cmp.mapping.preset.insert({
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<C-n>"] = cmp.mapping(function(fallback)
+              if luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+              elseif cmp.visible() then
+                  cmp.select_next_item()
+              end
+          end, { "i", "s" }),
+          ["<C-p>"] = cmp.mapping(function(fallback)
+              if luasnip.jumpable(-1) then
+                  luasnip.jump(-1)
+              elseif cmp.visible() then
+                  cmp.select_prev_item()
+              end
+          end, { "i", "s" }),
+      }),
+      sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' }
+      }, {
+          { name = 'buffer' },
+      })
     })
 
-    -- You can also set special config for specific filetypes:
-    --    cmp.setup.filetype('gitcommit', {
-    --        sources = cmp.config.sources({
-    --            { name = 'cmp_git' },
-    --        }, {
-    --            { name = 'buffer' },
-    --        })
-    --    })
-
     -- nvim-cmp for commands
-    cmp.setup.cmdline('/', {
+    cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
         sources = {
             { name = 'buffer' }
         }
     })
     cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
             { name = 'path' }
         }, {
             { name = 'cmdline' }
-        })
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false }
     })
-    local has_words_before = function()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
-    local luasnip = require("luasnip")
 
     local nlspsettings = require("nlspsettings")
 
@@ -76,30 +74,8 @@ function M.config()
         loader = 'json'
     })
 
-    cmp.setup({
-        mapping = {
-            ["<C-n>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                elseif has_words_before() then
-                    cmp.complete()
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
-            ["<C-p>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
-        },
-    })
+    require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets/"})
+
     local devicons = require('nvim-web-devicons')
     cmp.register_source('devicons', {
         complete = function(_, _, callback)
@@ -115,22 +91,30 @@ function M.config()
         end,
     })
 
-    -- nvim-lspconfig config
+    -- Set up nvim-lspconfig.
     -- List of all pre-configured LSP servers:
     -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    local servers = { 'pylsp', 'clangd', 'html', 'cssls' }
+    
+    -- Servers without extra config
+    local servers = { 'pylsp', 'html', 'zls' }
     local lspconfig = require('lspconfig')
     for _, lsp in pairs(servers) do
         lspconfig[lsp].setup {}
     end
-    lspconfig.rust_analyzer.setup {                
+
+    -- Servers with extra config
+    lspconfig['rust_analyzer'].setup {                
         settings = {                      
             ["rust-analyzer"] = {
                 procMacro = { enable = true },
             }
         }
     }
+    lspconfig['clangd'].setup {
+        cmd = {'clangd', '-header-insertion=never' }
+    }
 
+    --- Set up LspSaga.
     require("lspsaga").setup({
         ui = {
             -- This option only works in Neovim 0.9
@@ -254,11 +238,11 @@ function M.config()
         auto_jump = { "lsp_definitions" }, -- for the given modes, automatically jump if there is only a single result
         signs = {
             -- icons / text used for a diagnostic
-            error = "",
-            warning = "",
-            hint = "",
+            error = "",
+            warning = "",
+            hint = "",
             information = "",
-            other = "﫠"
+            other = "󰮍"
         },
         use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
     }

@@ -15,6 +15,8 @@ require("lazy").setup({
     "Th3Whit3Wolf/one-nvim",
     "AlexvZyl/nordic.nvim",
     "lewis6991/gitsigns.nvim",
+    "kaicataldo/material.vim",
+    "neanias/everforest-nvim",
 
     -- basics
     "kyazdani42/nvim-web-devicons",
@@ -24,7 +26,7 @@ require("lazy").setup({
     "akinsho/bufferline.nvim",
     "moll/vim-bbye",
 
-    -- language
+    { "lervag/vimtex", lazy = false },
     "neovim/nvim-lspconfig",
     "glepnir/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
@@ -36,6 +38,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     "simrat39/rust-tools.nvim",
     "dnlhc/glance.nvim",
+    { 'mrcjkb/haskell-tools.nvim', version = '^3', ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject', } ,},
     "tamago324/nlsp-settings.nvim",
     "folke/trouble.nvim",
     "nvim-lualine/lualine.nvim",
