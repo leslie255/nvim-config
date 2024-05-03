@@ -19,11 +19,19 @@ You're supposed to fork this repo and work from there (as oppose to cloning it a
 git clone https://github.com/leslie255/nvim-config.git ~/.config/nvim
 ```
 
-2. This setup uses LSP and treesitter.
+2. Set up LSP
 
-This setup uses [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) which contains config for most languages servers out there. See `~/.config/nvim/autocomplete.lua`.
+This setup uses [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) which contains config for most languages servers out there. See `lua/configs/autocomplete.lua`, edit the list of LSP's in this file to languages you need, and make sure those LSP's are installed globally.
 
-Config for treesitter is in `lua/configs/treesitter.lua`.
+3. Set up treesitter
+
+Config for treesitter is in `lua/configs/treesitter.lua`, edit the list of languages in this file and run `:TSUpdate`.
+
+4. Set up snippets
+
+Snippet files are in `snippets/` (outside the `lua/` folder!), this setup uses [LuaSnip](https://github.com/L3MON4D3/LuaSnip) for snippets.
+
+This setup configrued LuaSnip to use snipmate-like snippet syntax, but LuaSnip also supports VSCode-like JSON snippet syntax, to change it, change `"luasnip.loaders.from_snipmate"` to `"luasnip.loaders.from_vscode"` in `lua/configs/autocomplete.lua`, for more information see [related LuaSnip docs](https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#add-snippets).
 
 ## FAQ
 > Why does the theme not match the screenshots?
