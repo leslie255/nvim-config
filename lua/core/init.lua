@@ -74,7 +74,6 @@ require("configs.nvimtree").config()
 require("configs.scrollbar").config()
 require("configs.telescope").config()
 require("configs.latex").config()
-require("configs.lang.rust").config()
 
 require("core.keymaps")
 require("core.theme")

@@ -1,6 +1,29 @@
 local M = {}
 
 function M.config()
+    -- Set up nvim-lspconfig.
+    -- List of all pre-configured LSP servers:
+    -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    
+    -- Servers without extra config
+    local servers = { 'pylsp', 'html', 'zls' }
+    local lspconfig = require('lspconfig')
+    for _, lsp in pairs(servers) do
+        lspconfig[lsp].setup {}
+    end
+
+    -- Servers with extra config
+    lspconfig['rust_analyzer'].setup {                
+        settings = {                      
+            ["rust-analyzer"] = {
+                procMacro = { enable = true },
+            }
+        }
+    }
+    lspconfig['clangd'].setup {
+        cmd = {'clangd', '-header-insertion=never' }
+    }
+
     -- Setup nvim-cmp.
     local cmp = require("cmp")
     local luasnip = require("luasnip")
@@ -90,29 +113,6 @@ function M.config()
             callback({ items = items })
         end,
     })
-
-    -- Set up nvim-lspconfig.
-    -- List of all pre-configured LSP servers:
-    -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    
-    -- Servers without extra config
-    local servers = { 'pylsp', 'html', 'zls' }
-    local lspconfig = require('lspconfig')
-    for _, lsp in pairs(servers) do
-        lspconfig[lsp].setup {}
-    end
-
-    -- Servers with extra config
-    lspconfig['rust_analyzer'].setup {                
-        settings = {                      
-            ["rust-analyzer"] = {
-                procMacro = { enable = true },
-            }
-        }
-    }
-    lspconfig['clangd'].setup {
-        cmd = {'clangd', '-header-insertion=never' }
-    }
 
     --- Set up LspSaga.
     require("lspsaga").setup({
