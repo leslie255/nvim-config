@@ -26,7 +26,6 @@ require("lazy").setup({
     "akinsho/bufferline.nvim",
     "moll/vim-bbye",
 
-    { "lervag/vimtex", lazy = false },
     "neovim/nvim-lspconfig",
     "glepnir/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
@@ -36,7 +35,6 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip",
     "nvim-treesitter/nvim-treesitter",
-    "simrat39/rust-tools.nvim",
     "dnlhc/glance.nvim",
     { 'mrcjkb/haskell-tools.nvim', version = '^3', ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject', } ,},
     "tamago324/nlsp-settings.nvim",
@@ -47,4 +45,9 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     "goolord/alpha-nvim",
     "petertriho/nvim-scrollbar",
+
+    -- language specific
+    { "lervag/vimtex", lazy = false },
+    "simrat39/rust-tools.nvim",
+    "isti115/agda.nvim",
 })
