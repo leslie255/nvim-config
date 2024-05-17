@@ -36,12 +36,16 @@ end, {silent = true})
 vim.keymap.set("n", "<F3>", ":NvimTreeToggle<cr>")
 vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<cr>")
 
--- y: telescope
-local telescope = require "telescope.builtin"
-vim.keymap.set("n", "<F9>", function() telescope.find_files {} end)
-vim.keymap.set("n", "<F10>", function() telescope.git_files {} end)
-vim.keymap.set("n", "<F11>", function() telescope.buffers {} end)
-vim.keymap.set({ "n", "i" }, "<C-p>", function() telescope.registers {} end)
+-- d: telescope
+local telescope_builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>df", function() telescope_builtin.find_files {} end)
+vim.keymap.set("n", "<F9>", function() telescope_builtin.find_files {} end)
+vim.keymap.set("n", "<leader>dg", function() telescope_builtin.git_files {} end)
+vim.keymap.set("n", "<F10>", function() telescope_builtin.git_files {} end)
+vim.keymap.set("n", "<leader>db", function() telescope_builtin.buffers {} end)
+vim.keymap.set("n", "<leader>dc", function() telescope_builtin.colorscheme {} end)
+vim.keymap.set("n", "<leader>dr", function() telescope_builtin.registers {} end)
+vim.keymap.set({ "n", "i" }, "<C-p>", function() telescope_builtin.registers {} end)
 -- w: window
 vim.keymap.set("n", "<leader>w1", "<c-w>o")
 vim.keymap.set("n", "<leader>wx", ":x<cr>")
