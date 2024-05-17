@@ -9,16 +9,19 @@ local function set_bg_dark()
 end
 
 -- keymaps
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"rust", "haskell", "cpp"},
+    callback = function()
+        vim.schedule(function()
+            vim.keymap.set("i", "<C-;>", "::", {buffer = true})
+        end)
+    end,
+})
 vim.keymap.set("i", "<C-g>", "<esc>")
-vim.keymap.set("i", "<M-n>", "<up>")
-vim.keymap.set("i", "<M-p>", "<down>")
-vim.keymap.set("i", "<M-f>", "<right>")
-vim.keymap.set("i", "<M-b>", "<left>")
-vim.keymap.set("n", "<M-n>", "<down>")
-vim.keymap.set("n", "<M-p>", "<up>")
-vim.keymap.set("n", "<M-f>", "<right>")
-vim.keymap.set("n", "<M-b>", "<left>")
-vim.keymap.set("i", "<C-;>", "::") -- for C++ and Rust and Haskell, etc.
+vim.keymap.set("i", "<C-n>", "<up>")
+vim.keymap.set("i", "<C-p>", "<down>")
+vim.keymap.set("i", "<C-f>", "<right>")
+vim.keymap.set("i", "<C-b>", "<left>")
 vim.keymap.set("n", "<leader>vl", set_bg_light)
 vim.keymap.set("n", "<leader>vd", set_bg_dark)
 vim.keymap.set("n", "<leader>", ":")

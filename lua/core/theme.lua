@@ -46,6 +46,6 @@
 -- material
 -- vim.g.material_theme_style = 'darker'
 
-vim.cmd("colorscheme murphy")
+vim.cmd("colorscheme edge")
 
 vim.cmd("set background=dark")
