@@ -27,9 +27,9 @@ vim.keymap.set("n", "<leader>vd", set_bg_dark)
 vim.keymap.set("n", "<leader>", ":")
 
 local ls = require("luasnip")
-vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-J>", function()
+vim.keymap.set({"i"}, "<C-o>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-j>", function() ls.jump(1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-k>", function()
     if ls.choice_active() then
         ls.change_choice(1)
     end
@@ -91,7 +91,7 @@ vim.keymap.set("n", "<leader>gd", ":Glance definitions<CR>")
 vim.keymap.set("n", "<F4>", ":Glance references<CR>")
 vim.keymap.set("n", "<leader>gt", ":Glance type_definitions<CR>")
 vim.keymap.set("n", "<leader>gi", ":Glance implementations<CR>")
-vim.keymap.set("n", "<leader>gN", ":Lspsaga diagnostic_jump_prev<cr>")
+vim.keymap.set("n", "<leader>gp", ":Lspsaga diagnostic_jump_prev<cr>")
 vim.keymap.set("n", "<leader>gn", ":Lspsaga diagnostic_jump_next<cr>")
 
 vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder)

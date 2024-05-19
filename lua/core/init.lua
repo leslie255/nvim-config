@@ -65,7 +65,6 @@ require("core.gui")
 require("configs.autocomplete").config()
 require("configs.statusline").config()
 require("configs.treesitter").config()
-require("configs.startscreen").config()
 require("configs.git").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
@@ -78,14 +77,3 @@ require("configs.lang.agda").config()
 
 require("core.keymaps")
 require("core.theme")
-
-local list_snips = function()
-	local ft_list = require("luasnip").available()[vim.o.filetype]
-	local ft_snips = {}
-	for _, item in pairs(ft_list) do
-		ft_snips[item.trigger] = item.name
-	end
-	print(vim.inspect(ft_snips))
-end
-
-vim.api.nvim_create_user_command("SnipList", list_snips, {})
