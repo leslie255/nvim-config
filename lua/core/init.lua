@@ -77,14 +77,12 @@ require("configs.telescope").config()
 local function try_load_lang_config(ft)
     local name = "configs.lang." .. ft
     if package.loaded[name] then
-        print(name .. " is already loaded")
+        -- print(name .. " is already loaded")
     else
         local success, module = pcall(require, name)
         if success then
             print(name .. " loaded")
             module.config()
-        else
-            -- print("Failed to load module " .. name .. "\n" .. moduleX)
         end
     end
 end
