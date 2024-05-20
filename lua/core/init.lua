@@ -72,8 +72,30 @@ require("configs.terminal").config()
 require("configs.nvimtree").config()
 require("configs.scrollbar").config()
 require("configs.telescope").config()
-require("configs.lang.tex").config()
-require("configs.lang.agda").config()
+
+--- If there is a `configs.lang.ft`, load it and call `.config()` on it.
+local function try_load_lang_config(ft)
+    local name = "configs.lang." .. ft
+    if package.loaded[name] then
+        print(name .. " is already loaded")
+    else
+        local success, module = pcall(require, name)
+        if success then
+            print(name .. " loaded")
+            module.config()
+        else
+            -- print("Failed to load module " .. name .. "\n" .. moduleX)
+        end
+    end
+end
+
+vim.api.nvim_create_autocmd("BufRead", {
+    pattern = "*",
+    callback = function()
+        local ft = vim.api.nvim_buf_get_option(0, "filetype")
+        try_load_lang_config(ft)
+    end,
+})
 
 require("core.keymaps")
 require("core.theme")
