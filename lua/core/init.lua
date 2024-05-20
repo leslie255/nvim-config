@@ -69,7 +69,7 @@ require("configs.git").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.terminal").config()
-require("configs.nvimtree").config()
+require("configs.filemanager").config()
 require("configs.scrollbar").config()
 require("configs.telescope").config()
 

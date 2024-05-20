@@ -36,8 +36,8 @@ vim.keymap.set({"i", "s"}, "<C-k>", function()
 end, {silent = true})
 
 -- f: file tree
-vim.keymap.set("n", "<F3>", ":NvimTreeToggle<cr>")
-vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<cr>")
+vim.keymap.set("n", "<F3>", ":Oil<cr>")
+vim.keymap.set("n", "<leader>ft", ":Oil<cr>")
 
 -- d: telescope
 local telescope_builtin = require("telescope.builtin")
