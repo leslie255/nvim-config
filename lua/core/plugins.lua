@@ -43,7 +43,6 @@ require("lazy").setup({
     "akinsho/toggleterm.nvim",
     "BurntSushi/ripgrep",
     "nvim-telescope/telescope.nvim",
-    "petertriho/nvim-scrollbar",
 
     -- language specific
     { "lervag/vimtex", lazy = false },

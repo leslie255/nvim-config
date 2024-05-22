@@ -80,28 +80,23 @@ require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.terminal").config()
 require("configs.filemanager").config()
-require("configs.scrollbar").config()
 require("configs.telescope").config()
 
 --- If there is a `configs.lang.ft`, load it and call `.config()` on it.
 local function try_load_lang_config(ft)
-    local name = "configs.lang." .. ft
-    if package.loaded[name] then
-        -- print(name .. " is already loaded")
-    else
-        local success, module = pcall(require, name)
-        if success then
-            print(name .. " loaded")
-            module.config()
-        end
-    end
 end
-
 vim.api.nvim_create_autocmd("BufRead", {
     pattern = "*",
     callback = function()
         local ft = vim.api.nvim_buf_get_option(0, "filetype")
-        try_load_lang_config(ft)
+        local name = "configs.lang." .. ft
+        if not package.loaded[name] then
+            local success, module = pcall(require, name)
+            if success then
+                print(name .. " loaded")
+                module.config()
+            end
+        end
     end,
 })
 
