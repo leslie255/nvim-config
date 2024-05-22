@@ -1,6 +1,4 @@
--- basicsinit
-vim.cmd('syntax on')
-vim.cmd('filetype plugin indent on')
+-- Basics.
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors  = true
@@ -8,27 +6,25 @@ vim.opt.shiftround     = true
 vim.opt.updatetime     = 100
 vim.opt.cursorline     = true
 vim.opt.autowrite      = true
-if (vim.fn.has('termguicolors') == 1) then
+if (vim.fn.has('termguicolors')) then
     vim.opt.termguicolors = true
 end
--- tabs
 vim.opt.autoindent    = true
 vim.opt.tabstop       = 4
 vim.opt.shiftwidth    = 4
 vim.opt.softtabstop   = 4
-vim.opt.mouse         = 'a'
+vim.opt.mouse         = "a"
 vim.opt.expandtab     = true
 vim.opt.autowrite     = false
 vim.opt.wrap          = false
-vim.opt.formatoptions = ''
-vim.opt.signcolumn = "yes" -- prevent sign column flickering
+vim.opt.formatoptions = ""
+vim.opt.signcolumn    = "yes" -- Prevent sign column flickering.
 
--- leader key has to be done before setting up lazy.nvim
+-- Leader key has to be set up before setting up lazy.nvim.
 vim.g.mapleader = ";"
 vim.g.maplocalleader = "\\"
 
--- disable some useless standard plugins to save startup time
--- these features have been better covered by plugins
+-- Disable builtin features to save startup time.
 vim.g.loaded_matchparen        = 1
 vim.g.loaded_matchit           = 1
 vim.g.loaded_logiPat           = 1
@@ -44,7 +40,7 @@ vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
 
--- setup lazy.nvim
+-- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -57,6 +53,20 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- Status line.
+-- vim.opt.cmdheight = 0
+-- Show status line during macro recording.
+-- vim.api.nvim_create_autocmd({ "RecordingEnter" }, {
+--   callback = function()
+--                vim.opt.cmdheight = 1
+--              end,
+-- })
+-- vim.api.nvim_create_autocmd({ "RecordingLeave" }, {
+--   callback = function()
+--                vim.opt.cmdheight = 0
+--              end,
+-- })
 
 require("core.plugins")
 
@@ -92,6 +102,18 @@ vim.api.nvim_create_autocmd("BufRead", {
     callback = function()
         local ft = vim.api.nvim_buf_get_option(0, "filetype")
         try_load_lang_config(ft)
+    end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        local bg = vim.opt.background:get()
+        if bg == "dark" then
+            vim.cmd("hi Visual guifg=Black guibg=White")
+        elseif bg == "light" then
+            vim.cmd("hi Visual guifg=White guibg=Black")
+        end
     end,
 })
 

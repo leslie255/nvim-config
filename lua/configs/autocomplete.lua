@@ -6,22 +6,22 @@ function M.config()
     -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     
     -- Servers without extra config
-    local servers = { 'pylsp', 'html', 'zls' }
-    local lspconfig = require('lspconfig')
+    local servers = { "pylsp", "html", "zls" }
+    local lspconfig = require("lspconfig")
     for _, lsp in pairs(servers) do
         lspconfig[lsp].setup {}
     end
 
     -- Servers with extra config
-    lspconfig['rust_analyzer'].setup {                
+    lspconfig["rust_analyzer"].setup {                
         settings = {                      
             ["rust-analyzer"] = {
                 procMacro = { enable = true },
             }
         }
     }
-    lspconfig['clangd'].setup {
-        cmd = {'clangd', '-header-insertion=never' }
+    lspconfig["clangd"].setup {
+        cmd = {"clangd", "-header-insertion=never" }
     }
 
     -- Setup nvim-cmp.
@@ -43,81 +43,65 @@ function M.config()
           -- documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
           { name = "path" },
       }, {
-          { name = 'buffer' },
+          { name = "buffer" },
       })
     })
 
     -- nvim-cmp for commands
-    cmp.setup.cmdline({ '/', '?' }, {
+    cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-            { name = 'buffer' }
+            { name = "buffer" }
         }
     })
-    cmp.setup.cmdline(':', {
+    cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-            { name = 'path' }
+            { name = "path" }
         }, {
-            { name = 'cmdline' }
+            { name = "cmdline" }
         }),
         matching = { disallow_symbol_nonprefix_matching = false }
     })
 
     local nlspsettings = require("nlspsettings")
     nlspsettings.setup({
-        config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
+        config_home = vim.fn.stdpath("config") .. "/nlsp-settings",
         local_settings_dir = ".nlsp-settings",
-        local_settings_root_markers_fallback = { '.git' },
+        local_settings_root_markers_fallback = { ".git" },
         append_default_schemas = true,
-        loader = 'json'
+        loader = "json"
     })
 
     require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets/"})
 
-    local devicons = require('nvim-web-devicons')
-    cmp.register_source('devicons', {
-        complete = function(_, _, callback)
-            local items = {}
-            for _, icon in pairs(devicons.get_icons()) do
-                table.insert(items, {
-                    label = icon.icon .. '  ' .. icon.name,
-                    insertText = icon.icon,
-                    filterText = icon.name,
-                })
-            end
-            callback({ items = items })
-        end,
-    })
-
     --- Set up LspSaga.
-    require("lspsaga").setup({
+    require("lspsaga").setup {
         ui = {
-            -- This option only works in Neovim 0.9
-            title = true,
-            -- Border type can be single, double, rounded, solid, shadow.
-            border = "single",
-            winblend = 0,
-            expand = " ",
-            collapse = " ",
-            code_action = " ",
-            incoming = " ",
-            outgoing = " ",
-            hover = ' ',
-            kind = {},
+            border = "solid",
+            kind = {
+                Folder = { " " },
+            },
         },
-    })
+        lightbulb = {
+            enable = false, -- Annoying
+        },
+        scroll_preview = {
+            scroll_down = '<C-n>',
+            scroll_up = '<C-p>',
+        },
+    }
 
-    local glance = require('glance')
+    local glance = require("glance")
     local actions = glance.actions
 
     glance.setup({
@@ -130,57 +114,57 @@ function M.config()
         },
         border = {
             enable = false, -- Show window borders. Only horizontal borders allowed
-            top_char = '―',
-            bottom_char = '―',
+            top_char = "―",
+            bottom_char = "―",
         },
         list = {
-            position = 'right', -- Position of the list window 'left'|'right'
+            position = "right", -- Position of the list window "left"|"right"
             width = 0.33, -- 33% width relative to the active window, min 0.1, max 0.5
         },
         theme = { -- This feature might not work properly in nvim-0.7.2
             enable = true, -- Will generate colors for the plugin based on your current colorscheme
-            mode = 'darken', -- 'brighten'|'darken'|'auto', 'auto' will set mode based on the brightness of your colorscheme
+            mode = "darken", -- "brighten"|"darken"|"auto", "auto" will set mode based on the brightness of your colorscheme
         },
         mappings = {
             list = {
-                ['j'] = actions.next, -- Bring the cursor to the next item in the list
-                ['k'] = actions.previous, -- Bring the cursor to the previous item in the list
-                ['<Down>'] = actions.next,
-                ['<Up>'] = actions.previous,
-                ['<Tab>'] = actions.next_location, -- Bring the cursor to the next location skipping groups in the list
-                ['<S-Tab>'] = actions.previous_location, -- Bring the cursor to the previous location skipping groups in the list
-                ['<C-u>'] = actions.preview_scroll_win(5),
-                ['<C-d>'] = actions.preview_scroll_win(-5),
-                ['v'] = actions.jump_vsplit,
-                ['s'] = actions.jump_split,
-                ['t'] = actions.jump_tab,
-                ['<CR>'] = actions.jump,
-                ['o'] = actions.jump,
-                ['<leader>l'] = actions.enter_win('preview'), -- Focus preview window
-                ['q'] = actions.close,
-                ['Q'] = actions.close,
-                ['<Esc>'] = actions.close,
-                -- ['<Esc>'] = false -- disable a mapping
+                ["j"] = actions.next, -- Bring the cursor to the next item in the list
+                ["k"] = actions.previous, -- Bring the cursor to the previous item in the list
+                ["<Down>"] = actions.next,
+                ["<Up>"] = actions.previous,
+                ["<Tab>"] = actions.next_location, -- Bring the cursor to the next location skipping groups in the list
+                ["<S-Tab>"] = actions.previous_location, -- Bring the cursor to the previous location skipping groups in the list
+                ["<C-u>"] = actions.preview_scroll_win(5),
+                ["<C-d>"] = actions.preview_scroll_win(-5),
+                ["v"] = actions.jump_vsplit,
+                ["s"] = actions.jump_split,
+                ["t"] = actions.jump_tab,
+                ["<CR>"] = actions.jump,
+                ["o"] = actions.jump,
+                ["<leader>l"] = actions.enter_win("preview"), -- Focus preview window
+                ["q"] = actions.close,
+                ["Q"] = actions.close,
+                ["<Esc>"] = actions.close,
+                -- ["<Esc>"] = false -- disable a mapping
             },
             preview = {
-                ['Q'] = actions.close,
-                ['<Tab>'] = actions.next_location,
-                ['<S-Tab>'] = actions.previous_location,
-                ['<leader>l'] = actions.enter_win('list'), -- Focus list window
+                ["Q"] = actions.close,
+                ["<Tab>"] = actions.next_location,
+                ["<S-Tab>"] = actions.previous_location,
+                ["<leader>l"] = actions.enter_win("list"), -- Focus list window
             },
         },
         hooks = {},
         folds = {
-            fold_closed = '',
-            fold_open = '',
+            fold_closed = " ",
+            fold_open = " ",
             folded = true, -- Automatically fold list on startup
         },
         indent_lines = {
             enable = true,
-            icon = '│',
+            icon = "│",
         },
         winbar = {
-            enable = true, -- Available strating from nvim-0.8+
+            enable = false, -- Managed by lspsaga instead
         },
     })
 

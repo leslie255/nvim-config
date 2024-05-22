@@ -8,7 +8,7 @@ require("lazy").setup({
     "rmehri01/onenord.nvim",
     { "catppuccin/nvim", name = "catppuccin" },
     "liuchengxu/space-vim-dark",
-    "ahmedabdulrahman/aylin.vim",
+    {"ahmedabdulrahman/aylin.vim", branch="0.5-nvim"},
     "rebelot/kanagawa.nvim",
     "NLKNguyen/papercolor-theme",
     "liuchengxu/space-vim-dark",
@@ -28,7 +28,7 @@ require("lazy").setup({
     "moll/vim-bbye",
 
     "neovim/nvim-lspconfig",
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
