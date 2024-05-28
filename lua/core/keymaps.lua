@@ -18,13 +18,14 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 vim.keymap.set("i", "<C-g>", "<esc>")
-vim.keymap.set("i", "<M-n>", "<up>")
-vim.keymap.set("i", "<M-p>", "<down>")
-vim.keymap.set("i", "<M-f>", "<right>")
-vim.keymap.set("i", "<M-b>", "<left>")
+-- vim.keymap.set("i", "<M-n>", "<up>")
+-- vim.keymap.set("i", "<M-p>", "<down>")
+-- vim.keymap.set("i", "<M-f>", "<right>")
+-- vim.keymap.set("i", "<M-b>", "<left>")
 vim.keymap.set("n", "<leader>vl", set_bg_light)
 vim.keymap.set("n", "<leader>vd", set_bg_dark)
 vim.keymap.set("n", "<leader>", ":")
+vim.keymap.set("n", "<space>", "f<space>")
 
 local ls = require("luasnip")
 vim.keymap.set({"i"}, "<C-o>", function() ls.expand() end, {silent = true})

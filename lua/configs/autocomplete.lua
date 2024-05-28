@@ -83,6 +83,7 @@ function M.config()
     })
 
     require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets/"})
+    luasnip.filetype_extend("all", { "_" })
 
     --- Set up LspSaga.
     require("lspsaga").setup {
